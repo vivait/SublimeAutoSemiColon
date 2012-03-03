@@ -34,7 +34,7 @@ class AutoSemiColonCommand(sublime_plugin.TextCommand):
                     # Delete the old semi colon
                     self.view.insert(edit_last, last - 1, ';')
                     # Move the cursor
-                    #self.view.sel().clear()
-                    #self.view.sel().add(sublime.Region(last, last))
+                    self.view.sel().clear()
+                    self.view.sel().add(sublime.Region(last, last))
         finally:
             self.view.end_edit(edit_last)
