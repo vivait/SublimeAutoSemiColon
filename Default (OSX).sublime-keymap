@@ -1,0 +1,7 @@
+[
+	{
+		"keys": [";"], "command": "auto_semi_colon", "context": [
+			{ "key": "selector", "operator": "equal", "operand": "source - string" }
+		]
+	}
+]
