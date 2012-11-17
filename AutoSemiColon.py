@@ -24,10 +24,17 @@ class AutoSemiColonCommand(sublime_plugin.TextCommand):
         try:
             # Loop through and add move it to the end
             for sel in self.view.sel():
-                last = first = sel.end()
+                last = last_bracket = first = sel.end()
                 # Find the last bracket
                 while (self.view.substr(last) in [' ', ')']):
-                    last += 1
+                    print self.view.substr(last) == ')'
+                    if (self.view.substr(last) == ')'):
+                        last_bracket = last + 1
+                    last += 1 
+
+                if (last_bracket < last):
+                    last = last_bracket
+
                 # Can we insert the semi colon elsewhere?
                 if last > first:
                     self.view.erase(edit_last, sublime.Region(first - 1, first))
