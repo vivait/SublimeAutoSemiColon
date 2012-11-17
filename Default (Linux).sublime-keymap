@@ -1,7 +1,8 @@
 [
 	{
 		"keys": [";"], "command": "auto_semi_colon", "context": [
-			{ "key": "selector", "operator": "equal", "operand": "source - string" }
+			{ "key": "selector", "operator": "equal", "operand": "source - string" },
+			{ "key": "preceding_text", "operator": "not_regex_contains", "operand": "(for(each)?|if|switch|while)[^\\{]+$", "match_all": true }
 		]
 	}
 ]
