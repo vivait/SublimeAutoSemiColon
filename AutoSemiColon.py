@@ -14,8 +14,8 @@ class AutoSemiColonCommand(sublime_plugin.TextCommand):
         for sel in self.view.sel():
             last = last_bracket = first = sel.end()
             # Find the last bracket
-            while (self.view.substr(last) in [' ', ')']):
-                if (self.view.substr(last) == ')'):
+            while (self.view.substr(last) in [' ', ')', ']']):
+                if (self.view.substr(last) != ' '):
                     last_bracket = last + 1
                 last += 1
 
