@@ -1,5 +1,6 @@
 SublimeAutoSemiColon
 ================
+** This project has been archived **
 
 This plugin automatically moves a semi-colon to outside of the last bracket when pressed inside one of more pairs of brackets.
 
